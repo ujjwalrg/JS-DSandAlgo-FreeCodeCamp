@@ -45,4 +45,11 @@ let result10 = timRegex.test(timStr);
 let favWord = "favorite";
 let favRegex = /favou?rite/; // Change this line, matches either favorite or favourite
 let result11 = favRegex.test(favWord);
-console.log(result11);
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{6,})(?=\w*\d{2})/; // Match passwords with more than 6 characters and has 2 consecutive digits
+let result12 = pwRegex.test(sampleWord);
+let myString = "Eleanor Roosevelt";
+let myRegex2 = /(Eleanor|Franklin)(\w*|.)* Roosevelt/; // Change this line
+let result13 = myRegex2.test(myString); // Change this line
+// After passing the challenge experiment with myString and see how the grouping works
+console.log(result13);
