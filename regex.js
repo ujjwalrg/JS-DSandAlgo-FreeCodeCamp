@@ -17,3 +17,9 @@ let text = "<h1>Winter is coming</h1>";
 let myRegex = /<[a-z]1>+?/; // Change this line, question mark is lazy loading matches the smallest pattern
 let result = text.match(myRegex);
 console.log(result);
+
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /[\w+]/g; // Change this line
+let result3 = quoteSample.match(alphabetRegexV2);
+
+console.log(result3);
