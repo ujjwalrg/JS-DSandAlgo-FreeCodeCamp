@@ -52,4 +52,14 @@ let myString = "Eleanor Roosevelt";
 let myRegex2 = /(Eleanor|Franklin)(\w*|.)* Roosevelt/; // Change this line
 let result13 = myRegex2.test(myString); // Change this line
 // After passing the challenge experiment with myString and see how the grouping works
-console.log(result13);
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+) \1 \1$/; // match patterns
+let result14 = reRegex.test(repeatNum);
+let str = "one two three";
+let fixRegex = /(one) (two) (three)/; // capture groups, (one) is a capture group denoted by $1, similarly...
+let replaceText = "$3 $2 $1"; // Change this line
+let result15 = str.replace(fixRegex, replaceText);
+let hello = "   Hello, World!  "; //trimming starting and end of the string
+let wsRegex = /^(\s+)|(\s+)$/g; // Change this line
+let result16 = hello.replace(wsRegex, ""); // Change this line
+console.log(result16);
