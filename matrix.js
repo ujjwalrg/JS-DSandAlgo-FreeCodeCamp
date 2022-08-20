@@ -80,11 +80,24 @@
 
 // console.log(reverseString("hello"));
 
-function factorialize(num) {
-  if (num === 0) return 1;
-  if (num === 1) return 1;
-  num = num * factorialize(num - 1);
-  return num;
+// function factorialize(num) {
+//   if (num === 0) return 1;
+//   if (num === 1) return 1;
+//   num = num * factorialize(num - 1);
+//   return num;
+// }
+
+// factorialize(5);
+function findLongestWordLength(str) {
+  let max = 0;
+  const arr = str.split(" ");
+  const size = arr.length;
+  // console.log(size)
+  for (let i = 0; i < size; i++) {
+    max = Math.max(max, arr[i].length);
+    // console.log(max)
+  }
+  return max;
 }
 
-factorialize(5);
+findLongestWordLength("The quick brown fox jumped over the lazy dog");
