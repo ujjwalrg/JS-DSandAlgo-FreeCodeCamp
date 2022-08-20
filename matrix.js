@@ -88,16 +88,37 @@
 // }
 
 // factorialize(5);
-function findLongestWordLength(str) {
+// function findLongestWordLength(str) {
+//   let max = 0;
+//   const arr = str.split(" ");
+//   const size = arr.length;
+//   // console.log(size)
+//   for (let i = 0; i < size; i++) {
+//     max = Math.max(max, arr[i].length);
+//     // console.log(max)
+//   }
+//   return max;
+// }
+
+// findLongestWordLength("The quick brown fox jumped over the lazy dog");
+
+function largestOfFour(arr) {
   let max = 0;
-  const arr = str.split(" ");
-  const size = arr.length;
-  // console.log(size)
-  for (let i = 0; i < size; i++) {
-    max = Math.max(max, arr[i].length);
-    // console.log(max)
+  let arra = [];
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 4; j++) {
+      max = Math.max(max, arr[i][j]);
+    }
+    arra.push(max);
+    max = -Infinity;
   }
-  return max;
+  // console.log(arra)
+  return arra;
 }
 
-findLongestWordLength("The quick brown fox jumped over the lazy dog");
+largestOfFour([
+  [4, 5, 1, 3],
+  [13, 27, 18, 26],
+  [32, 35, 37, 39],
+  [1000, 1001, 857, 1],
+]);
