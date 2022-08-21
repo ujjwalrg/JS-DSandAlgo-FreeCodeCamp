@@ -166,9 +166,9 @@
 
 // findElement([1, 2, 3, 4], (num) => num % 2 === 0);
 
-function booWho(bool) {
-  return bool == 0 ? true : bool === true ? true : false;
-  // return bool;
-}
+// function booWho(bool) {
+//   return bool == 0 ? true : bool === true ? true : false;
+//   // return bool;
+// }
 
-booWho(null);
+// booWho(null);
