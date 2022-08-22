@@ -172,10 +172,22 @@
 // }
 
 // booWho(null);
-function frankenSplice(arr1, arr2, n) {
-  arr2 = arr2.slice(0, n).concat(arr1).concat(arr2.slice(n, arr2.length));
-  console.log(arr2);
-  return arr2;
+// function frankenSplice(arr1, arr2, n) {
+//   arr2 = arr2.slice(0, n).concat(arr1).concat(arr2.slice(n, arr2.length));
+//   console.log(arr2);
+//   return arr2;
+// }
+
+// frankenSplice([1, 2, 3], [4, 5, 6], 1);
+function bouncer(arr) {
+  // for (let item in arr){
+  //   if (!arr[item]) arr.splice(item, 1);
+  //   if (arr[item] === false)arr.splice(item, 1);
+  // }
+  arr = arr.filter(Boolean);
+  console.log(arr);
+  return arr;
 }
 
-frankenSplice([1, 2, 3], [4, 5, 6], 1);
+// bouncer([7, "ate", "", false, 9]);
+bouncer([false, null, 0, NaN, undefined, "", { a: 2 }]);
