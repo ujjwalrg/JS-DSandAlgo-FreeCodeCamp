@@ -259,5 +259,17 @@ let dog = {
     return "This dog has " + this.numLegs + " legs.";
   },
 };
+function Dog() {
+  this.name = "Rupert";
+  this.color = "brown";
+  this.numLegs = 4;
+  this.getm = function getme() {
+    return this.color;
+  };
+}
+// Only change code below this line
+
+const hound = new Dog();
+console.log(hound.getm);
 
 dog.sayLegs();
