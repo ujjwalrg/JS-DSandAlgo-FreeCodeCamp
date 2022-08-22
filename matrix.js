@@ -179,15 +179,34 @@
 // }
 
 // frankenSplice([1, 2, 3], [4, 5, 6], 1);
-function bouncer(arr) {
-  // for (let item in arr){
-  //   if (!arr[item]) arr.splice(item, 1);
-  //   if (arr[item] === false)arr.splice(item, 1);
-  // }
-  arr = arr.filter(Boolean);
-  console.log(arr);
-  return arr;
+// function bouncer(arr) {
+//   // for (let item in arr){
+//   //   if (!arr[item]) arr.splice(item, 1);
+//   //   if (arr[item] === false)arr.splice(item, 1);
+//   // }
+//   arr = arr.filter(Boolean);
+//   console.log(arr);
+//   return arr;
+// }
+
+// // bouncer([7, "ate", "", false, 9]);
+// bouncer([false, null, 0, NaN, undefined, "", { a: 2 }]);
+function getIndexToIns(arr, num) {
+  arr = arr.sort((a, b) => a - b);
+  // console.log(arr);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= num) {
+      arr.splice(i, 0, num);
+      console.log(arr);
+      return i;
+    }
+  }
+  arr.push(num);
+  return arr.length - 1;
+  // console.log(arr)
+  // return num;
 }
 
-// bouncer([7, "ate", "", false, 9]);
-bouncer([false, null, 0, NaN, undefined, "", { a: 2 }]);
+// getIndexToIns([40, 60], 50);
+// getIndexToIns([3, 10, 5], 3)
+getIndexToIns([10, 20, 30, 40, 50], 30);
