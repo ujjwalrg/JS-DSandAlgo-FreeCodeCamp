@@ -210,19 +210,40 @@
 // // getIndexToIns([40, 60], 50);
 // // getIndexToIns([3, 10, 5], 3)
 // getIndexToIns([10, 20, 30, 40, 50], 30);
-function mutation(arr) {
-  let arr2 = arr.map((item) => item.toLowerCase().split("").sort().join(""));
-  // return (arr2[0].includes(arr2[1])) || arr2[1].includes(arr2[0]);
-  // console.log(arr2[0].includes(arr2[1]))
-  // console.log(arr2);
-  for (let i = 0; i < arr2[1].length; i++) {
-    // if (arr2[1])
-    if (arr2[0].indexOf(arr2[1][i]) === -1) return false;
+// function mutation(arr) {
+//   let arr2 = arr.map((item) => item.toLowerCase().split("").sort().join(""));
+//   // return (arr2[0].includes(arr2[1])) || arr2[1].includes(arr2[0]);
+//   // console.log(arr2[0].includes(arr2[1]))
+//   // console.log(arr2);
+//   for (let i = 0; i < arr2[1].length; i++) {
+//     // if (arr2[1])
+//     if (arr2[0].indexOf(arr2[1][i]) === -1) return false;
+//   }
+//   return true;
+//   // console.log(arr2[1].length)
+// }
+
+// // mutation(["hello", "hllo"]);
+// mutation(["floor", "for"]);
+// // mutation(["Mary", "Aarmy"])
+function chunkArrayInGroups(arr, size) {
+  let ar = [];
+  let len = arr.length / size;
+
+  for (let i = 0; i < len; i++) {
+    let mar = [];
+    for (let j = 0; j < size; j++) {
+      //  console.log(mar.push[arr[0]]);
+      if (arr[0] != undefined) mar.push(arr[0]);
+      arr.shift();
+    }
+    ar.push(mar);
+    mar = [];
   }
-  return true;
-  // console.log(arr2[1].length)
+  console.log(ar);
+  return ar;
 }
 
-// mutation(["hello", "hllo"]);
-mutation(["floor", "for"]);
-// mutation(["Mary", "Aarmy"])
+// chunkArrayInGroups(["a", "b", "c", "d"], 2);
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3);
+// chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)
