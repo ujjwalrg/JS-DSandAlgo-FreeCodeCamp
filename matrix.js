@@ -191,22 +191,38 @@
 
 // // bouncer([7, "ate", "", false, 9]);
 // bouncer([false, null, 0, NaN, undefined, "", { a: 2 }]);
-function getIndexToIns(arr, num) {
-  arr = arr.sort((a, b) => a - b);
-  // console.log(arr);
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] >= num) {
-      arr.splice(i, 0, num);
-      console.log(arr);
-      return i;
-    }
+// function getIndexToIns(arr, num) {
+//   arr = arr.sort((a, b) => a - b);
+//   // console.log(arr);
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] >= num) {
+//       arr.splice(i, 0, num);
+//       console.log(arr);
+//       return i;
+//     }
+//   }
+//   arr.push(num);
+//   return arr.length - 1;
+//   // console.log(arr)
+//   // return num;
+// }
+
+// // getIndexToIns([40, 60], 50);
+// // getIndexToIns([3, 10, 5], 3)
+// getIndexToIns([10, 20, 30, 40, 50], 30);
+function mutation(arr) {
+  let arr2 = arr.map((item) => item.toLowerCase().split("").sort().join(""));
+  // return (arr2[0].includes(arr2[1])) || arr2[1].includes(arr2[0]);
+  // console.log(arr2[0].includes(arr2[1]))
+  // console.log(arr2);
+  for (let i = 0; i < arr2[1].length; i++) {
+    // if (arr2[1])
+    if (arr2[0].indexOf(arr2[1][i]) === -1) return false;
   }
-  arr.push(num);
-  return arr.length - 1;
-  // console.log(arr)
-  // return num;
+  return true;
+  // console.log(arr2[1].length)
 }
 
-// getIndexToIns([40, 60], 50);
-// getIndexToIns([3, 10, 5], 3)
-getIndexToIns([10, 20, 30, 40, 50], 30);
+// mutation(["hello", "hllo"]);
+mutation(["floor", "for"]);
+// mutation(["Mary", "Aarmy"])
