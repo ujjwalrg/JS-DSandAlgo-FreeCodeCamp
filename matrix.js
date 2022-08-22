@@ -244,10 +244,20 @@ function chunkArrayInGroups(arr, size) {
   return ar;
 }
 
-// chunkArrayInGroups(["a", "b", "c", "d"], 2);
-chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3);
-// chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)
+// // chunkArrayInGroups(["a", "b", "c", "d"], 2);
+// chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3);
+// // chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)
+// let dog = {
+//   name: "ujj",
+//   numLegs: 3,
+// };
+
 let dog = {
-  name: "ujj",
-  numLegs: 3,
+  name: "Spot",
+  numLegs: 4,
+  sayLegs: function () {
+    return "This dog has " + this.numLegs + " legs.";
+  },
 };
+
+dog.sayLegs();
